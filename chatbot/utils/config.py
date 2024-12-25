@@ -1,0 +1,5 @@
+HOST = "0.0.0.0"
+PORT = 3000
+DEBUG = True
+USE_LIP_TOOL = False
+LOGGING_LEVEL = "INFO"

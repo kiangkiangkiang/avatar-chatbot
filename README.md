@@ -58,40 +58,41 @@ Now, you have started the frontend service. You can directly visit `http://local
 
 Any changes needed for the UI can be fully referenced from the contents inside the `./frontend` directory. For changes related to the avatar, you can refer to the #Customize-Avatar section.
 
-### Backend
+### Launch Backend Services
+
+*Don't forget put your Open API Key in `.env` file!*
+
+#### Install Dependency
+
+```sh
+pip install -r requirements.txt
+```
+
+#### Launch Flask API
+
+```sh
+python -m chatbot
+```
+
+Now, your backend chatbot service is set up at `http://localhost:3000`. Therefore, you can go to `http://localhost:5173` and try typing to chat with the Avatar!
+
+Any chatbot-related configurations can be adjusted in the `./chatbot/utils/config.py` file.
+
+The `http://localhost:3000` is set as the default in the frontend files. Therefore, if the service is expanded or modified in the future, you can adjust the backend communication port in the frontend files to ensure consistent communication.
 
 ### Optional
 
 #### Lip-Sync Package
 
-#### Customize Avatar
-
-1. **Clone the Repository**  
-   Clone this repository to your local machine using the command:
-   ```bash
-   git clone https://github.com/yourusername/avatar-chatbot.git
-
-Install Dependencies
-
-Navigate into the project directory and install the necessary dependencies:
-
-bash
-cd avatar-chatbot
-npm install
-Run the Application
-
-Start the chatbot application with the following command:
-
-bash
-npm start
-Access the Chatbot
-
-Open your web browser and go to http://localhost:3000 to interact with the Avatar Chatbot.
-
-Reference
 wget https://github.com/DanielSWolf/rhubarb-lip-sync/releases/download/v1.13.0/Rhubarb-Lip-Sync-1.13.0-Linux.zip
 
 unzip
 
 把整個資料夾移動到 bin 內（起後端服務的）
+
+#### Customize Avatar
+
+
+## Reference
+
 

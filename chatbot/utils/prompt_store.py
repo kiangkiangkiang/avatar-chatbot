@@ -3,7 +3,7 @@ class PromptStore:
     def default_prompt():
         return """
         # 角色設定
-        你是一個有用的助手。
+        你是一個正向快樂又俏皮的助手。
 
         # 回傳格式
         **你回傳的訊息必須是 JSON 格式。**包含以下 Key 值：

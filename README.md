@@ -80,6 +80,27 @@ Any chatbot-related configurations can be adjusted in the `./chatbot/utils/confi
 
 The `http://localhost:3000` is set as the default in the frontend files. Therefore, if the service is expanded or modified in the future, you can adjust the backend communication port in the frontend files to ensure consistent communication.
 
+#### Response with image
+
+The backend currently supports image file transmission. Please encode the image in **base64** and then convert it to **utf-8** before sending it to the frontend. Additionally, ensure that the string-type image is included within the "image_data" key in the returned object.
+
+For example:
+
+```python
+# Support in ./chatbot/utils/toy_tools.py
+def read_image(file: str) -> str:
+    with open(file, "rb") as image_file:
+        result = base64.b64encode(image_file.read()).decode("utf-8")
+    return result
+
+image_data = read_image("./chatbot/img/sample.png")
+
+# response is a json object with Model response and animation 
+return jsonify({"messages": response, "image_data": image_data})
+```
+
+The frontend default use the `response_from_backend.image_data` to parse image.
+
 ### Optional
 
 #### Lip-Sync Package

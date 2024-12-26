@@ -1,8 +1,15 @@
+import base64
 import json
 import subprocess
 from typing import Callable
 
 from chatbot.utils.logger import logger
+
+
+def read_image(file: str) -> str:
+    with open(file, "rb") as image_file:
+        result = base64.b64encode(image_file.read()).decode("utf-8")
+    return result
 
 
 def exec_command(command):

@@ -14,8 +14,9 @@ export const ChatProvider = ({ children }) => {
       },
       body: JSON.stringify({ message }),
     });
-    const resp = (await data.json()).messages;
-    setMessages((messages) => [...messages, ...resp]);
+    const resp = (await data.json());
+    console.log("resp == ", resp.image_data);
+    setMessages((messages) => [...messages, ...resp.messages]);
     setLoading(false);
     return (resp);
   };

@@ -9,6 +9,14 @@ class OpenAITools:
     def __init__(self):
         self.client = OpenAI()
 
+    @property
+    def dummy_response(self):
+        return {
+            "text": "Default Response!",
+            "facialExpression": "smile",
+            "animation": "Rumba",
+        }
+
     def create_chat_completions(
         self,
         user_msg,

@@ -4,6 +4,34 @@ const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const ChatContext = createContext();
 
+function generatePageId() {
+  return Date.now().toString() + Math.random().toString(36).substring(2);
+}
+
+sessionStorage.setItem('pageId', generatePageId());
+const pageId = sessionStorage.getItem('pageId');
+
+window.onload = function () {
+  fetch(`${backendUrl}/on_page_create`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ pageId: pageId })
+  });
+};
+
+window.addEventListener('beforeunload', (event) => {
+  fetch(`${backendUrl}/on_page_remove`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ pageId: pageId }),
+    keepalive: true, // 確保瀏覽器允許在 unload 時執行請求
+  });
+});
+
 export const ChatProvider = ({ children }) => {
   const chat = async (message) => {
     setLoading(true);
@@ -12,7 +40,7 @@ export const ChatProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message: message, pageId: pageId }),
     });
     const resp = (await data.json());
     console.log("resp == ", resp.image_data);

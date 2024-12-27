@@ -55,21 +55,6 @@ def chat():
 
     sessions[user_id].append_memory(role="user", content=messages)
 
-    # Debug
-    # if True:
-    #     clean_response = openai_tools.dummy_response
-    #     response = [clean_response]
-    #     with open("./chatbot/audios/default.mp3", "rb") as f:
-    #         response[0]["audio"] = base64.b64encode(f.read()).decode("utf-8")
-
-    #     response[0]["lipsync"] = get_lip(
-    #         use_rhubarb=False,
-    #     )
-
-    #     base64_image = read_image("./chatbot/img/sample.png")
-
-    #     return jsonify({"messages": response, "image_data": base64_image})
-
     clean_response = openai_tools.create_chat_completions_with_func_try(
         unstable_func=json.loads,
         messages=sessions[user_id].chat_memory,

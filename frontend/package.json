@@ -16,6 +16,7 @@
     "leva": "^0.9.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "read-pkg-up": "^11.0.0",
     "three": "0.153.0"
   },
   "devDependencies": {
@@ -26,5 +27,9 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "vite": "^4.1.0"
-  }
+  },
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

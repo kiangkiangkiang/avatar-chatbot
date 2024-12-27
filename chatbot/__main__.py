@@ -83,7 +83,7 @@ def chat():
     response[0]["audio"] = base64.b64encode(audio_response.read()).decode("utf-8")
     response[0]["lipsync"] = get_lip(
         use_rhubarb=USE_LIP_TOOL,
-        mp3_file_name=f"./chatbot/audios/tmp_{str(uuid.uuid4())}",
+        mp3_file_name=f"./chatbot/audios/tmp/tmp_{str(uuid.uuid4())}",
         write_file_func=audio_response.write_to_file,
     )
 

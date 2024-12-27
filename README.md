@@ -4,13 +4,10 @@
 
 Welcome to the Avatar Chatbot project! This project aims to create an engaging and interactive chatbot that users can interact with using an avatar interface. The Avatar Chatbot enhances user experience by adding a visual and dynamic component to traditional text-based chatbots.
 
-![Avatar Chatbot Overview](path_to_your_image.png)  
+<p align="center">
+    <img src = "./docs/demo.png" style="width: 80%; "></img>
+</p>
 
-**Toy Demonstration**
-
-To see a demonstration of the Avatar Chatbot in action, please refer to the video below:
-
-![Avatar Chatbot Demo](path_to_your_video.mp4)
 
 ## Quickstart
 

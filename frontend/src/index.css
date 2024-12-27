@@ -12,14 +12,21 @@
   height: 100vh;
 }
 
-body {
+/* body {
   margin: 0;
   background-color: #faaca8;
   background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
+} */
+
+body {
+  margin: 0;
+  background-color: #ddc7ff;
+  background-image: linear-gradient(19deg, #ddc7ff 0%, #ddd6f3 100%);
 }
 
 body.greenScreen {
   background-color: #00ff00;
   background-image: none;
 }
+
 
